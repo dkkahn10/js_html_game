@@ -101,8 +101,8 @@
       let oggSupport;
 
       if(audio.canPlayType) {
-        mp3Support = "" != myAudio.canPlayType('audio/mpeg');
-        oggSupport = "" != myAudio.canPlayType('audio/ogg; codecs = "vorbus"');
+        mp3Support = "" != audio.canPlayType('audio/mpeg');
+        oggSupport = "" != audio.canPlayType('audio/ogg; codecs = "vorbus"');
       } else {
         mp3Support = false;
         oggSupport = false;
@@ -116,7 +116,6 @@
         sound.src = 'audio/Pokemon' + soundFileExtn;
         sound.play();
       }
-
     </script>
   </body>
 </html>
