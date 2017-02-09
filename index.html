@@ -114,8 +114,12 @@
     if(soundFileExtn) {
       let sound = new Audio();
 
+      sound.addEventListener('canplaythrough', function() {
+        alert('loaded');
+        sound.play();
+      });
+
       sound.src = 'audio/Pokemon' + soundFileExtn;
-      sound.play();
     }
   </script>
 </html>
