@@ -95,27 +95,5 @@
       Your browser does not support HTML5 Canvas. Please shift to another browser.
     </canvas>
     <img src='spaceship.png' id='spaceship' />
-    <script>
-      let audio = document.createElement('audio');
-      let mp3Support;
-      let oggSupport;
-
-      if(audio.canPlayType) {
-        mp3Support = "" != audio.canPlayType('audio/mpeg');
-        oggSupport = "" != audio.canPlayType('audio/ogg; codecs = "vorbus"');
-      } else {
-        mp3Support = false;
-        oggSupport = false;
-      }
-
-      let soundFileExtn = oggSupport ? '.ogg' : mp3Support ? '.mp3' : undefined;
-
-      if(soundFileExtn) {
-        let sound = new Audio();
-
-        sound.src = 'audio/Pokemon' + soundFileExtn;
-        sound.play();
-      }
-    </script>
   </body>
 </html>
