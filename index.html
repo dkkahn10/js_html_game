@@ -4,13 +4,13 @@
     <meta http-equiv = "Content-type" content="text/html charset=utf-8" />
     <title>The Game Begins</title>
     <script type="text/javascript" charset="utf-8">
-      function pageLoaded() {
+      pageLoaded = () => {
 
         // Get a handle to the canvas object
-        var canvas = document.getElementById('testcanvas');
+        let canvas = document.getElementById('testcanvas');
 
         // Get the 2d context for this canvas
-        var context = canvas.getContext('2d')
+        let context = canvas.getContext('2d')
 
         //practice images
         context.fillRect(200, 10, 100, 100);
@@ -69,6 +69,12 @@
 
         context.fillStyle = 'rgba(0, 255, 0, 0.6)';
         context.fillRect(450, 180, 100, 50);
+
+        let image = document.getElementById('spaceship');
+
+        context.drawImage(image, 0, 350);
+        context.drawImage(image, 0, 400, 100, 25);
+        context.drawImage(image, 0, 0, 60, 50, 0, 420, 60, 50);
       }
     </script>
   </head>
