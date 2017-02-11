@@ -17,5 +17,9 @@
     };
   };
 
-  
-})
+  if(!window.cancelAnimationFrame) {
+    window.cancelAnimationFrame = function(id) {
+      clearTimeout(id);
+    };
+  };
+}());
