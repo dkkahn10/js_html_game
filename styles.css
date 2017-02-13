@@ -11,3 +11,8 @@
   position: absolute;
   display: none;
 }
+
+#gamestartscreen {
+  padding-top: 250px;
+  text-align: center;
+}
