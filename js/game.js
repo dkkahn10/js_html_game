@@ -25,6 +25,7 @@ let levels = {
       entities: []
     }
   ],
+
   init: function() {
     let html = '';
 
@@ -38,5 +39,9 @@ let levels = {
       levels.load(this.value - 1);
       $('#levelselectscreen').hide();
     });
+  },
+
+  load: function(number) {
+
   }
 }
