@@ -11,3 +11,19 @@ let game = {
     game.context = game.canvas.getContext('2d');
   }
 }
+
+let levels = {
+  data:[
+    {
+      foreground: 'desert-foreground',
+      background: 'clouds-background',
+      entities: []
+    },
+    {
+      foreground: 'desert-foreground',
+      background: 'clouds-background',
+      entities: []
+    }
+  ],
+  
+}
