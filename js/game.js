@@ -4,6 +4,8 @@ $(window).load(function() {
 
 let game = {
   init: function() {
+    levels.init();
+
     $('.gamelayer').hide();
     $('#gamestartscreen').show();
 
