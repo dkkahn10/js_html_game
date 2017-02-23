@@ -34,6 +34,9 @@ let levels = {
     };
     $('#levelselectscreen').html(html);
 
-    
+    $('#levelselectscreen input').click(function() {
+      levels.load(this.value - 1);
+      $('#levelselectscreen').hide();
+    });
   }
 }
