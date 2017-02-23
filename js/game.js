@@ -1,3 +1,7 @@
+$(window).load(function() {
+  game.init();
+});
+
 let game = {
   init: function() {
     $('.gamelayer').hide();
