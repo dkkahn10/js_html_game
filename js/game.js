@@ -67,7 +67,12 @@ let loader = {
       mp3Support = '' != audio.canPlayType('audio/mpeg');
       oggSupport = '' != audio.canPlayType('audio/ogg; codecs="vorbis"');
     } else {
-      
+      mp3Support = false;
+      oggSupport = false;
     }
-  }
+
+    loader.soundFileExtn = oggSupport ? '.ogg' : mp3Support ? '.mp3' : undefined;
+  },
+
+
 }
