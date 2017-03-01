@@ -36,8 +36,8 @@ let levels = {
   init: function() {
     let html = '';
 
-    for(let i = 0; i < level.data.length; i++) {
-      let level = level.data[i];
+    for(let i = 0; i < levels.data.length; i++) {
+      let level = levels.data[i];
       html += '<input type="button" value="'+(i+1)+'">';
     };
     $('#levelselectscreen').html(html);
