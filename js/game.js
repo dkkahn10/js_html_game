@@ -52,3 +52,7 @@ let levels = {
 
   }
 }
+
+let loader = {
+  
+}
