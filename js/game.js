@@ -54,5 +54,9 @@ let levels = {
 }
 
 let loader = {
+  loaded: true,
+  loadedCount: 0,
+  totalCount: 0,
+
   
 }
