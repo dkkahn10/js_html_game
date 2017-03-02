@@ -53,7 +53,12 @@ let levels = {
     game.currentLevel = {number: number, hero: []};
     game.score = 0;
 
-    
+    $('#score').html('Score: ' + game.score);
+
+    let level = levels.data[number];
+
+    game.currentLevel.backgroundImage = loader.loadImage('images/background/' + level.background + '.png');
+    game.currentLevel.foregroundImage = loader.loadImage('images/backgrounds/' + level.foreground + '.png');
   }
 }
 
