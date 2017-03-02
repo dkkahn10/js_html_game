@@ -59,6 +59,10 @@ let levels = {
 
     game.currentLevel.backgroundImage = loader.loadImage('images/backgrounds/' + level.background + '.png');
     game.currentLevel.foregroundImage = loader.loadImage('images/backgrounds/' + level.foreground + '.png');
+    game.slingshotImage = loader.loadImage('images/slingshot.png');
+    game.slingshotFrontImage = loader.loadImage('images/slingshot-front.png');
+
+    
   }
 }
 
