@@ -52,3 +52,37 @@ let levels = {
 
   }
 }
+
+let loader = {
+  loaded: true,
+  loadedCount: 0,
+  totalCount: 0,
+
+  init: function() {
+    let mp3Support;
+    let oggSupport;
+    let audio = document.createElement('audio');
+
+    if (audio.canPlayType) {
+      mp3Support = '' != audio.canPlayType('audio/mpeg');
+      oggSupport = '' != audio.canPlayType('audio/ogg; codecs="vorbis"');
+    } else {
+      mp3Support = false;
+      oggSupport = false;
+    }
+
+    loader.soundFileExtn = oggSupport ? '.ogg' : mp3Support ? '.mp3' : undefined;
+  },
+
+  loadImage: function(url) {
+    this.totalCount++;
+    this.loaded = false;
+    $('#loadingscreen').show();
+    let image = new Image();
+    image.src = url;
+    image.onload = loader.itemLoaded;
+    return image;
+  },
+
+
+}
