@@ -50,7 +50,10 @@ let levels = {
   },
 
   load: function(number) {
+    game.currentLevel = {number: number, hero: []};
+    game.score = 0;
 
+    
   }
 }
 
