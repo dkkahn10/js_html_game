@@ -89,5 +89,11 @@ let loader = {
   loadSound: function(url) {
     this.totalCount++;
     this.loaded = false;
-  }
+    $('#loadingscreen').show();
+    let audio = new Audio();
+    audio.src = url + loader.soundFileExtn;
+    audio.addEventListener('canplaythrough', loader.itemLoaded, false);
+  },
+
+
 }
