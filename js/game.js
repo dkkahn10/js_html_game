@@ -84,5 +84,10 @@ let loader = {
     return image;
   },
 
+  soundFileExtn: '.ogg',
 
+  loadSound: function(url) {
+    this.totalCount++;
+    this.loaded = false;
+  }
 }
