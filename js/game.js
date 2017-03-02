@@ -93,6 +93,7 @@ let loader = {
     let audio = new Audio();
     audio.src = url + loader.soundFileExtn;
     audio.addEventListener('canplaythrough', loader.itemLoaded, false);
+    return audio;
   },
 
 
