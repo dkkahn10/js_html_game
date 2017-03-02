@@ -57,7 +57,7 @@ let levels = {
 
     let level = levels.data[number];
 
-    game.currentLevel.backgroundImage = loader.loadImage('images/background/' + level.background + '.png');
+    game.currentLevel.backgroundImage = loader.loadImage('images/backgrounds/' + level.background + '.png');
     game.currentLevel.foregroundImage = loader.loadImage('images/backgrounds/' + level.foreground + '.png');
   }
 }
