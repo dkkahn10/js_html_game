@@ -1,3 +1,7 @@
+(function() {
+
+})
+
 $(window).load(function() {
   game.init();
 });
@@ -65,7 +69,7 @@ let levels = {
     if(loader.loaded) {
       game.start()
     } else {
-      loader.onload = game.start; 
+      loader.onload = game.start;
     }
   }
 }
