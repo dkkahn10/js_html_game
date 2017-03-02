@@ -96,5 +96,8 @@ let loader = {
     return audio;
   },
 
+  itemLoaded: function() {
+    
+  }
 
 }
