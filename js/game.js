@@ -77,7 +77,9 @@ let loader = {
   loadImage: function(url) {
     this.totalCount++;
     this.loaded = false;
+
     $('#loadingscreen').show();
+
     let image = new Image();
     image.src = url;
     image.onload = loader.itemLoaded;
@@ -89,7 +91,9 @@ let loader = {
   loadSound: function(url) {
     this.totalCount++;
     this.loaded = false;
+
     $('#loadingscreen').show();
+
     let audio = new Audio();
     audio.src = url + loader.soundFileExtn;
     audio.addEventListener('canplaythrough', loader.itemLoaded, false);
@@ -97,7 +101,19 @@ let loader = {
   },
 
   itemLoaded: function() {
-    
-  }
+    loader.loadedCount++;
 
+    $('#loadingmessage').html('Loaded ' + loader.loadedCount + ' of ' + loader.totalCount);
+
+    if (loader.loadedCount === loader.totalCount) {
+      loader.loaded = true;
+
+      $('#loadingscreen').hide();
+
+      if(loader.onload) {
+        loader.onload();
+        loader.onload = undefined;
+      }
+    }
+  }
 }
