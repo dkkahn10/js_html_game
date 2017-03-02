@@ -62,7 +62,11 @@ let levels = {
     game.slingshotImage = loader.loadImage('images/slingshot.png');
     game.slingshotFrontImage = loader.loadImage('images/slingshot-front.png');
 
-    
+    if(loader.loaded) {
+      game.start()
+    } else {
+      loader.onload = game.start; 
+    }
   }
 }
 
