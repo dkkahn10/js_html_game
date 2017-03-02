@@ -74,5 +74,7 @@ let loader = {
     loader.soundFileExtn = oggSupport ? '.ogg' : mp3Support ? '.mp3' : undefined;
   },
 
-
+  loadImage: function(url) {
+    
+  }
 }
