@@ -75,6 +75,14 @@ let loader = {
   },
 
   loadImage: function(url) {
-    
-  }
+    this.totalCount++;
+    this.loaded = false;
+    $('#loadingscreen').show();
+    let image = new Image();
+    image.src = url;
+    image.onload = loader.itemLoaded;
+    return image;
+  },
+
+  
 }
