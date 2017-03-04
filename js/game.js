@@ -7,7 +7,12 @@
     window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
   }
 
-  
+  if (!window.requestAnimationFrame) {
+    window.requestAnimationFrame = function(callbaack, element) {
+      
+    }
+  }
+
 })
 
 $(window).load(function() {
