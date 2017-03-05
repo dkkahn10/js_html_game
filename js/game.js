@@ -1,3 +1,30 @@
+(function() {
+  let lastTime = 0;
+  let vendors = ['ms', 'moz', 'webkit', 'o'];
+
+  for(let x = 0; x < vendors.length && !window.requestAnimationFrame; x++) {
+    window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+    window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+  }
+
+  if (!window.requestAnimationFrame) {
+    window.requestAnimationFrame = function(callbaack, element) {
+      let currTime = new Date().getTime();
+      let timeToCall = Math.max(0, 16 - (currTime - lastTime));
+      let id = window.setTimeout(function() { callback(currTime + timeToCall); },
+    timeToCall);
+    lastTime = currTime + timeToCall;
+    return id;
+    }
+
+    if (!window.cancelAnimationFrame) {
+      window.cancelAnimationFrame = function(id) {
+        clearTimeout(id);
+      }
+    }
+  }
+}());
+
 $(window).load(function() {
   game.init();
 });
@@ -17,6 +44,39 @@ let game = {
   showLevelScreen: function() {
     $('.gamelayer').hide();
     $('#levelselectscreen').show('slow');
+  },
+
+  mode: 'intro',
+  slingshotX: 140,
+  slingshotY: 280,
+
+  start: function() {
+    $('.gamelayer').hide();
+    $('#gamecanvas').show();
+    $('#scorescreen').show();
+
+    game.mode = 'intro';
+    game.offsetLeft = 0;
+    game.ended = false;
+    game.animationFrame = window.requestAnimationFrame(game.animate, game.canvas);
+  },
+
+  handlePanning: function() {
+    game.offsetLeft++;
+  },
+
+  animate: function() {
+    game.handlePanning();
+
+    game.context.drawImage(game.currentLevel.backgroundImage, game.offsetLeft/4, 0, 640, 480, 0, 0, 640, 480);
+    game.context.drawImage(game.currentLevel.foregroundImage, game.offsetLeft, 0, 640, 480, 0, 0, 640, 480);
+    game.context.drawImage(game.slingshotImage, game.slingshotX-game.offsetLeft, game.slingshotY);
+    game.context.drawImage(game.slingshotFrontImage, game.slingshotX-game.offsetLeft, game.slingshotY);
+
+    if(!game.ended) {
+      game.animationFrame = window.requestAnimationFrame(game.animate, game.canvas);
+    }
+    
   }
 }
 
@@ -65,7 +125,7 @@ let levels = {
     if(loader.loaded) {
       game.start()
     } else {
-      loader.onload = game.start; 
+      loader.onload = game.start;
     }
   }
 }
