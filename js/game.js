@@ -54,7 +54,14 @@ let game = {
     $('.gamelayer').hide();
     $('#gamecanvas').show();
     $('#scorescreen').show();
-  }
+
+    game.mode = 'intro';
+    game.offsetLeft = 0;
+    game.ended = false;
+    game.animationFrame = window.requestAnimationFrame(game.animate, game.canvas);
+  },
+
+  
 }
 
 let levels = {
