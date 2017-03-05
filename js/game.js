@@ -73,6 +73,10 @@ let game = {
     game.context.drawImage(game.slingshotImage, game.slingshotX-game.offsetLeft, game.slingshotY);
     game.context.drawImage(game.slingshotFrontImage, game.slingshotX-game.offsetLeft, game.slingshotY);
 
+    if(!game.ended) {
+      game.animationFrame = window.requestAnimationFrame(game.animate, game.canvas);
+    }
+    
   }
 }
 
