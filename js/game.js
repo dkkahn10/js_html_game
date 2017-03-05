@@ -49,9 +49,11 @@ let game = {
   mode: 'intro',
   slingshotX: 140,
   slingshotY: 280,
-  
-  start: function() {
 
+  start: function() {
+    $('.gamelayer').hide();
+    $('#gamecanvas').show();
+    $('#scorescreen').show();
   }
 }
 
