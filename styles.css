@@ -48,5 +48,12 @@
   height: 48px;
   color: white;
   background: url(images/loader.gif) no-repeat center;
-  font: 12px Arial; 
+  font: 12px Arial;
+}
+
+#scorescreen {
+  height: 60px;
+  font: 32px Comic Sans MS;
+  text-shadow: 0 0 2px #000;
+  color: white;
 }
