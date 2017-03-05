@@ -68,7 +68,8 @@ let game = {
   animate: function() {
     game.handlePanning();
 
-    
+    game.context.drawImage(game.currentLevel.backgroundImage, game.offsetLeft/4, 0, 640, 480, 0, 0, 640, 480);
+    game.context.drawImage(game.currentLevel.foregroundImage, game.offsetLeft, 0, 640, 480, 0, 0, 640, 480);
   }
 }
 
