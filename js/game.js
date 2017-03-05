@@ -65,7 +65,11 @@ let game = {
     game.offsetLeft++;
   },
 
-  
+  animate: function() {
+    game.handlePanning();
+
+    
+  }
 }
 
 let levels = {
