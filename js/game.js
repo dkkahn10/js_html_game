@@ -61,6 +61,10 @@ let game = {
     game.animationFrame = window.requestAnimationFrame(game.animate, game.canvas);
   },
 
+  handlePanning: function() {
+    game.offsetLeft++;
+  },
+
   
 }
 
