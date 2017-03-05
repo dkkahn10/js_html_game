@@ -44,6 +44,14 @@ let game = {
   showLevelScreen: function() {
     $('.gamelayer').hide();
     $('#levelselectscreen').show('slow');
+  },
+
+  mode: 'intro',
+  slingshotX: 140,
+  slingshotY: 280,
+  
+  start: function() {
+
   }
 }
 
