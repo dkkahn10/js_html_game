@@ -226,6 +226,7 @@ let mouse = {
   },
 
   mouseuphandler: function(ev) {
-
+    mouse.down = false;
+    mouse.dragging = false; 
   }
 }
