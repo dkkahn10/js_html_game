@@ -76,7 +76,7 @@ let game = {
     if(!game.ended) {
       game.animationFrame = window.requestAnimationFrame(game.animate, game.canvas);
     }
-    
+
   }
 }
 
@@ -193,4 +193,8 @@ let loader = {
       }
     }
   }
+}
+
+let mouse = {
+  
 }
