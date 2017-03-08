@@ -33,6 +33,7 @@ let game = {
   init: function() {
     levels.init();
     loader.init();
+    mouse.init();
 
     $('.gamelayer').hide();
     $('#gamestartscreen').show();
@@ -227,6 +228,6 @@ let mouse = {
 
   mouseuphandler: function(ev) {
     mouse.down = false;
-    mouse.dragging = false; 
+    mouse.dragging = false;
   }
 }
