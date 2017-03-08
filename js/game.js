@@ -214,7 +214,11 @@ let mouse = {
     mouse.y = ev.pageY - offset.top;
 
     if(mouse.down) {
-      mouse.dragging = true; 
+      mouse.dragging = true;
     }
   },
+
+  mousedownhandler: function(ev) {
+    
+  }
 }
