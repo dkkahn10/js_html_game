@@ -208,6 +208,10 @@ let mouse = {
   },
 
   mousemovehandler: function(ev) {
-    let offset= $('#gamecanvas').offset();
-  }
+    let offset = $('#gamecanvas').offset();
+
+    mouse.x = ev.pageX - offset.left;
+    mouse.y = ev.pageY - offset.top;
+
+  },
 }
