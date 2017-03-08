@@ -33,6 +33,7 @@ let game = {
   init: function() {
     levels.init();
     loader.init();
+    mouse.init();
 
     $('.gamelayer').hide();
     $('#gamestartscreen').show();
@@ -76,7 +77,7 @@ let game = {
     if(!game.ended) {
       game.animationFrame = window.requestAnimationFrame(game.animate, game.canvas);
     }
-    
+
   }
 }
 
@@ -192,5 +193,41 @@ let loader = {
         loader.onload = undefined;
       }
     }
+  }
+}
+
+let mouse = {
+  x: 0,
+  y: 0,
+  down: false,
+
+  init: function() {
+    $('#gamecanvas').mousemove(mouse.mousemovehandler);
+    $('#gamecanvas').mousedown(mouse.mousedownhandler);
+    $('#gamecanvas').mouseup(mouse.mouseuphandler);
+    $('#gamecanvas').mouseout(mouse.mousehandler);
+  },
+
+  mousemovehandler: function(ev) {
+    let offset = $('#gamecanvas').offset();
+
+    mouse.x = ev.pageX - offset.left;
+    mouse.y = ev.pageY - offset.top;
+
+    if(mouse.down) {
+      mouse.dragging = true;
+    }
+  },
+
+  mousedownhandler: function(ev) {
+    mouse.down = true;
+    mouse.downX = mouse.x;
+    mouse.downY = mouse.y;
+    ev.originalEvent.preventDefault();
+  },
+
+  mouseuphandler: function(ev) {
+    mouse.down = false;
+    mouse.dragging = false;
   }
 }
