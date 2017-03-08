@@ -196,5 +196,14 @@ let loader = {
 }
 
 let mouse = {
-  
+  x: 0,
+  y: 0,
+  down: false,
+
+  init: function() {
+    $('#gamecanvas').mousemove(mouse.mousemovehandler);
+    $('#gamecanvas').mousedown(mouse.mousedownhandler);
+    $('#gamecanvas').mouseup(mouse.mouseuphandler);
+    
+  }
 }
