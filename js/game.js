@@ -204,6 +204,10 @@ let mouse = {
     $('#gamecanvas').mousemove(mouse.mousemovehandler);
     $('#gamecanvas').mousedown(mouse.mousedownhandler);
     $('#gamecanvas').mouseup(mouse.mouseuphandler);
-    
+    $('#gamecanvas').mouseout(mouse.mousehandler);
+  },
+
+  mousemovehandler: function(ev) {
+    let offset= $('#gamecanvas').offset();
   }
 }
