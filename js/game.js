@@ -219,10 +219,13 @@ let mouse = {
   },
 
   mousedownhandler: function(ev) {
-
+    mouse.down = true;
+    mouse.downX = mouse.x;
+    mouse.downY = mouse.y;
+    ev.originalEvent.preventDefault();
   },
 
   mouseuphandler: function(ev) {
-    
+
   }
 }
