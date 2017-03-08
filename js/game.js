@@ -219,6 +219,10 @@ let mouse = {
   },
 
   mousedownhandler: function(ev) {
+
+  },
+
+  mouseuphandler: function(ev) {
     
   }
 }
