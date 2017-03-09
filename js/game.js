@@ -68,6 +68,12 @@ let game = {
   offsetLeft: 0,
   score: 0,
 
+  panTo: function(newCenter) {
+    if(Math.abs(newCenter - game.offsetLeft - game.canvas.width / 4) > 0 && game.offsetLeft <= game.maxOffset && game.offsetLeft >= game.minOffset) {
+      
+    }
+  }
+
   handlePanning: function() {
     game.offsetLeft++;
   },
