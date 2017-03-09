@@ -70,7 +70,13 @@ let game = {
 
   panTo: function(newCenter) {
     if(Math.abs(newCenter - game.offsetLeft - game.canvas.width / 4) > 0 && game.offsetLeft <= game.maxOffset && game.offsetLeft >= game.minOffset) {
-      
+      let deltaX = Math.round((newCenter - game.offsetLeft - game.canvas.width / 4) / 2);
+
+      if (deltaX && Math.abs(deltaX) > game.maxSpeed) {
+        deltaX = game.maxSpeed * Math.abs(deltaX) / (deltaX);
+      }
+
+      game.offsetLeft += deltaX;
     }
   }
 
