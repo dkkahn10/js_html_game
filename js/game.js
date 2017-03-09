@@ -62,6 +62,9 @@ let game = {
     game.animationFrame = window.requestAnimationFrame(game.animate, game.canvas);
   },
 
+  maxSpeed: 3,
+  
+
   handlePanning: function() {
     game.offsetLeft++;
   },
