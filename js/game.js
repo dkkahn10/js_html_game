@@ -66,6 +66,7 @@ let game = {
   minOffset: 0,
   maxOffset: 300,
   offsetLeft: 0,
+  score: 0,
 
   handlePanning: function() {
     game.offsetLeft++;
