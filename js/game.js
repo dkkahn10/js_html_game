@@ -77,8 +77,20 @@ let game = {
       }
 
       game.offsetLeft += deltaX;
+    } else {
+      return true;
     }
-  }
+
+    if(game.offsetLeft < game.minOffset) {
+      game.offsetLeft = game.minOffset;
+      return true;
+    } else if(game.offsetLeft > game.maxOffset) {
+      game.offsetLeft = game.maxOffset;
+      return true;
+    }
+
+    return false;
+  },
 
   handlePanning: function() {
     game.offsetLeft++;
