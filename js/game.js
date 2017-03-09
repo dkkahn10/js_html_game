@@ -99,7 +99,13 @@ let game = {
       }
     }
 
-    
+    if(game.mode === 'wait-for-firing') {
+      if(mouse.dragging) {
+        game.panTo(mouse.x + game.offsetLeft);
+      } else {
+        game.panTo(game.slingshotX);
+      }
+    }
   },
 
   animate: function() {
