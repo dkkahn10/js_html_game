@@ -93,7 +93,13 @@ let game = {
   },
 
   handlePanning: function() {
-    game.offsetLeft++;
+    if(game.mode === 'intro') {
+      if(game.panTo(700)) {
+        game.mode = 'load-next-hero';
+      }
+    }
+
+    
   },
 
   animate: function() {
