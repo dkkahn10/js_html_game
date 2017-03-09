@@ -93,13 +93,13 @@ let game = {
   },
 
   handlePanning: function() {
-    if(game.mode === 'intro') {
+    if(game.mode == 'intro') {
       if(game.panTo(700)) {
         game.mode = 'load-next-hero';
       }
     }
 
-    if(game.mode === 'wait-for-firing') {
+    if(game.mode == 'wait-for-firing') {
       if(mouse.dragging) {
         game.panTo(mouse.x + game.offsetLeft);
       } else {
@@ -108,7 +108,7 @@ let game = {
     }
 
     if (game.mode === 'load-next-hero') {
-      
+
     }
   },
 
