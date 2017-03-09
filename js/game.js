@@ -63,7 +63,8 @@ let game = {
   },
 
   maxSpeed: 3,
-  
+  minOffset: 0,
+  maxOffset: 300,
 
   handlePanning: function() {
     game.offsetLeft++;
