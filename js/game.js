@@ -106,6 +106,10 @@ let game = {
         game.panTo(game.slingshotX);
       }
     }
+
+    if (game.mode === 'load-next-hero') {
+      
+    }
   },
 
   animate: function() {
