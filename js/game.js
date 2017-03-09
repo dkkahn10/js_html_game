@@ -107,8 +107,16 @@ let game = {
       }
     }
 
-    if (game.mode === 'load-next-hero') {
+    if (game.mode == 'load-next-hero') {
+      game.mode = 'wait-for-firing';
+    }
 
+    if(game.mode == 'firing') {
+      game.panTo(game.slingshotX);
+    }
+
+    if(game.mode == 'fired') {
+      
     }
   },
 
