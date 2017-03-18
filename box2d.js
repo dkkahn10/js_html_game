@@ -8,3 +8,9 @@ let b2PolygonShape = Box2D.Collision.Shapes.b2PolygonShape;
 let b2CircleShape = Box2D.Collision.Shapes.b2CircleShape;
 let b2DebugDraw = Box2D.Dynamics.b2DebugDraw;
 let b2RevoluteJointDef = Box2D.Dynamics.Joints.b2RevoluteJointDef;
+
+let world;
+let scale = 30;
+function init() {
+  
+}
