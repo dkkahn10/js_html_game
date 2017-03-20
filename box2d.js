@@ -31,4 +31,7 @@ function createFloor() {
 
   fixtureDef.shape = new b2PolygonShape;
   fixtureDef.shape.SetAsBox(320/scale, 10/scale);
+
+  let body = world.CreateBody(bodyDef);
+  let fixture = body.CreateFixture(fixtureDef);
 }
