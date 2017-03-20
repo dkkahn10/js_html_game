@@ -28,4 +28,7 @@ function createFloor() {
   fixtureDef.density = 1.0;
   fixtureDef.friction = 0.5;
   fixtureDef.restitution = 0.2;
+
+  fixtureDef.shape = new b2PolygonShape;
+  fixtureDef.shape.SetAsBox(320/scale, 10/scale);
 }
