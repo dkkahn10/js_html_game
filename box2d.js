@@ -19,5 +19,10 @@ function init() {
 }
 
 function createFloor() {
+  let bodyDef = new b2BodyDef;
+  bodyDef.type = b2Body.b2_staticBody;
+  bodyDef.position.x = 640/2/scale;
+  bodyDef.position.y = 450/scale;
+
   
 }
