@@ -11,8 +11,29 @@ let b2RevoluteJointDef = Box2D.Dynamics.Joints.b2RevoluteJointDef;
 
 let world;
 let scale = 30;
+
 function init() {
   let gravity = new b2Vec2(0, 9.8);
   let allowSleep = true; //allows objects at rest to "fall asleep" and be excluded from calculations
   world = new b2World(gravity, allowSleep);
+
+  createFloor();
+}
+
+function createFloor() {
+  let bodyDef = new b2BodyDef;
+  bodyDef.type = b2Body.b2_staticBody;
+  bodyDef.position.x = 640/2/scale;
+  bodyDef.position.y = 450/scale;
+
+  let fixtureDef = new b2FixtureDef;
+  fixtureDef.density = 1.0;
+  fixtureDef.friction = 0.5;
+  fixtureDef.restitution = 0.2;
+
+  fixtureDef.shape = new b2PolygonShape;
+  fixtureDef.shape.SetAsBox(320/scale, 10/scale);
+
+  let body = world.CreateBody(bodyDef);
+  let fixture = body.CreateFixture(fixtureDef);
 }
