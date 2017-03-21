@@ -47,4 +47,5 @@ function setupDebugDraw() {
 
   debugDraw.SetSprite(context);
   debugDraw.SetDrawScale(scale);
+  debugDraw.SetFillAlpha(0.3);
 }
