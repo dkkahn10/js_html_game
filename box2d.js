@@ -16,6 +16,8 @@ function init() {
   let gravity = new b2Vec2(0, 9.8);
   let allowSleep = true; //allows objects at rest to "fall asleep" and be excluded from calculations
   world = new b2World(gravity, allowSleep);
+
+  createFloor();
 }
 
 function createFloor() {
