@@ -41,5 +41,7 @@ function createFloor() {
 let context;
 
 function setupDebugDraw() {
-  
+  context = document.getElementById('canvas').getContext('2d');
+
+  let debugDraw = new b2DebugDraw();
 }
