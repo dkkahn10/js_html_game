@@ -46,4 +46,5 @@ function setupDebugDraw() {
   let debugDraw = new b2DebugDraw();
 
   debugDraw.SetSprite(context);
+  debugDraw.SetDrawScale(scale);
 }
