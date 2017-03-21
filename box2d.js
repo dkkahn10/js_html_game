@@ -37,3 +37,9 @@ function createFloor() {
   let body = world.CreateBody(bodyDef);
   let fixture = body.CreateFixture(fixtureDef);
 }
+
+let context;
+
+function setupDebugDraw() {
+  
+}
