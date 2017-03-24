@@ -54,3 +54,5 @@ function setupDebugDraw() {
 
   world.SetDebugDraw(debugDraw);
 }
+
+let timeStep = 1/60;
