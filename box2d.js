@@ -18,6 +18,7 @@ function init() {
   world = new b2World(gravity, allowSleep);
 
   createFloor();
+  setupDebugDraw();
 }
 
 function createFloor() {
@@ -36,4 +37,20 @@ function createFloor() {
 
   let body = world.CreateBody(bodyDef);
   let fixture = body.CreateFixture(fixtureDef);
+}
+
+let context;
+
+function setupDebugDraw() {
+  context = document.getElementById('canvas').getContext('2d');
+
+  let debugDraw = new b2DebugDraw();
+
+  debugDraw.SetSprite(context);
+  debugDraw.SetDrawScale(scale);
+  debugDraw.SetFillAlpha(0.3);
+  debugDraw.SetLineThickness(1.0);
+  debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
+
+  world.SetDebugDraw(debugDraw);
 }
