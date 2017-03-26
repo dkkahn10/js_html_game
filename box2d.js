@@ -18,7 +18,9 @@ function init() {
   world = new b2World(gravity, allowSleep);
 
   createFloor();
+
   setupDebugDraw();
+  animate();
 }
 
 function createFloor() {
@@ -53,4 +55,17 @@ function setupDebugDraw() {
   debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
 
   world.SetDebugDraw(debugDraw);
+}
+
+let timeStep = 1/60;
+let velocityIterations = 8;
+let positionIterations = 3
+
+function animate() {
+  world.Step(timeStep, veloctiyIterations, positionIterations);
+  world.ClearForces();
+
+  world.DrawDebugData();
+
+  setTimeout(animate, timeStep);
 }
