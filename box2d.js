@@ -18,7 +18,9 @@ function init() {
   world = new b2World(gravity, allowSleep);
 
   createFloor();
+
   setupDebugDraw();
+  animate();
 }
 
 function createFloor() {
