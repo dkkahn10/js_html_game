@@ -56,3 +56,5 @@ function setupDebugDraw() {
 }
 
 let timeStep = 1/60;
+let velocityIterations = 8;
+let positionIterations = 3;
