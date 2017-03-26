@@ -60,5 +60,10 @@ let velocityIterations = 8;
 let positionIterations = 3
 
 function animate() {
-  world.Step(timeStep, veloctiyIterations, positionIterations)
+  world.Step(timeStep, veloctiyIterations, positionIterations);
+  world.ClearForces();
+
+  world.DrawDebugData();
+
+  setTimeout(animate, timeStep);
 }
