@@ -69,3 +69,7 @@ function animate() {
 
   setTimeout(animate, timeStep);
 }
+
+function createRectangularBody() {
+  
+}
