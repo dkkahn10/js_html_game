@@ -76,5 +76,10 @@ function createRectangularBody() {
   bodyDef.position.x = 40/scale;
   bodyDef.position.y = 100/scale;
 
+  let fixtureDef = new b2FixtureDef;
+  fixtureDef.density = 1.0;
+  fixtureDef.friction = 0.5;
+  fixtureDef.restitution = 0.3;
+
   
 }
