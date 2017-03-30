@@ -71,5 +71,10 @@ function animate() {
 }
 
 function createRectangularBody() {
+  let BodyDef = new b2BodyDef;
+  bodyDef.type = b2Body.b2_dynamicBody;
+  bodyDef.position.x = 40/scale;
+  bodyDef.position.y = 100/scale;
+
   
 }
