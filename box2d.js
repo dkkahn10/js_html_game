@@ -19,6 +19,8 @@ function init() {
 
   createFloor();
 
+  createRectangularBody();
+
   setupDebugDraw();
   animate();
 }
