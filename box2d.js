@@ -81,5 +81,6 @@ function createRectangularBody() {
   fixtureDef.friction = 0.5;
   fixtureDef.restitution = 0.3;
 
-  
+  fixtureDef.shape = new b2PolygonShape;
+  fixtureDef.shape.SetAsBox(30/scale, 50/scale);
 }
